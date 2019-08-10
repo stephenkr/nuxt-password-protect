@@ -41,10 +41,9 @@
       "^.+.js$": "babel-jest"
     }
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
-    "@babel/core": "^7.4.4",
+    "@babel/core": "npm:@babel/core",
     "@babel/preset-env": "^7.4.4",
     "@nuxtjs/eslint-config": "^0.0.1",
     "@vue/test-utils": "^1.0.0-beta.29",
