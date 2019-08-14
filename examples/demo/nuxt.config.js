@@ -58,6 +58,6 @@ export default {
 
   passwordProtect: {
     formPath: '/password',
-    passwords: []
+    passwords: ''
   }
 }

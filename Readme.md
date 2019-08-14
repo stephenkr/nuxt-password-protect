@@ -27,41 +27,38 @@
 ## Features
 - Require a password to access a page
 - Require a password to access the entire website
-- Supports multiple passwords
 - Full control over the password page
 
 ## Usage
 
-### 1. Add module to nuxt.config.js along with the password protect options.
+### Add module to nuxt.config.js along with the password protect options.
 
 Your passwords can be stored as an environment variable or hardcoded in your source files.
 
-#### A single passwords
+#### Options
+
+
 ```
 module.exports = {
   modules: ['nuxt-password-protect'],
 
   passwordProtect: {
-    password: 'hello-world'
-  }
-}
-```
-
-#### Multiple passwords
-```
-module.exports = {
-  modules: ['nuxt-password-protect'],
-
-  passwordProtect: {
-    passwords: {
-      'password1': 'hello1',
-      'password2': 'hello2'
+    formPath: '/password',
+    password: 'hello-world',
+    tokenSeed: 0101010,
+    queryString: '_pw',
+    cookieName: '_password'
+    cookie: {
+      prefix: '',
+      expires: 5
     }
   }
 }
 ```
 
-### 2. Page specific password protect
+With the options you can define the basics of your website protection.
+
+### To protect a page, simply add the middleware
 
 ```
 export default {
@@ -69,6 +66,33 @@ export default {
   middleware: 'password-protect'
 }
 ```
+
+### To protect an entire website
+Add the middle ware to your nuxt configuration file
+
+```
+module.exports = {
+  middleware: ['password-protect']
+}
+```
+
+### Using the API
+
+We provide three methods you can use on your password form page, these will either add or remove authorisation or check if a user is authorised.
+
+You can access these methods using the context of your vue component.
+
+*this.$passwordProtect.authorise(password)*
+
+This method will create a cookie with a unique cookie if the user has entered the correct password.
+
+*this.$passwordProtect.isAuthorised()*
+
+Is the user authorised to view this content, this will return a boolean depending.
+
+*this.$passwordProtect.removeAuthorisation()*
+
+Removes the users authorisation.
 
 # License
 
