@@ -14,7 +14,7 @@
   "scripts": {
     "lint": "eslint lib test",
     "lint-fix": "eslint --fix lib test",
-    "test": "npm run lint && jest",
+    "test": "jest",
     "preview": "standard-version --dry-run",
     "release": "standard-version && git push --follow-tags"
   },
@@ -41,7 +41,9 @@
       "^.+.js$": "babel-jest"
     }
   },
-  "dependencies": {},
+  "dependencies": {
+    "cookie": "^0.4.0"
+  },
   "devDependencies": {
     "@babel/core": "npm:@babel/core",
     "@babel/preset-env": "^7.4.4",
