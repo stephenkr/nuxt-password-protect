@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "@nuxtjs/pwa": "^2.6.0",
+    "cookie": "^0.4.0",
     "cross-env": "^5.2.0",
     "nuxt": "^2.4.0"
   },
