@@ -37,7 +37,7 @@ Your passwords can be stored as an environment variable or hardcoded in your sou
 
 #### Options
 
-
+Module initialisation in nuxt.config.js
 ```
 module.exports = {
   modules: ['nuxt-password-protect'],
@@ -63,7 +63,7 @@ With the options you can define the basics of your website protection.
 ```
 export default {
   name: 'MyComponent',
-  middleware: 'password-protect'
+  middleware: ['password-protect']
 }
 ```
 
@@ -72,7 +72,9 @@ Add the middle ware to your nuxt configuration file
 
 ```
 module.exports = {
-  middleware: ['password-protect']
+  router: {
+    middleware: ['password-protect']
+  }
 }
 ```
 
