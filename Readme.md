@@ -96,6 +96,14 @@ Is the user authorised to view this content, this will return a boolean dependin
 
 Removes the users authorisation.
 
+### Using the query string
+
+We also support granting authorisation using a querystring, by default the query string is `_pw`.
+
+So to attempt to authorise you can do `https://mywebsite.com?_pw=password`
+
+The query string can be changed by the protect password options in your nuxt config file.
+
 # License
 
 <a href="./LICENSE">MIT License</a>
