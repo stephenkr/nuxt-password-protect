@@ -47,7 +47,7 @@ module.exports = {
     password: 'hello-world',
     tokenSeed: 0101010,
     queryString: '_pw',
-    cookieName: '_password'
+    cookieName: '_password',
     cookie: {
       prefix: '',
       expires: 5
