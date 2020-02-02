@@ -36,6 +36,10 @@ export default {
   */
   modules: ['@nuxtjs/pwa', '../../lib/module'],
 
+  router: {
+    middleware: ['password-protect']
+  },
+
   /*
   ** Build configuration
   */
@@ -58,6 +62,9 @@ export default {
 
   passwordProtect: {
     formPath: '/password',
-    passwords: ''
+    password: 'pass',
+    tokenSeed: 3343490,
+    queryString: '_pw',
+    cookieName: '_password'
   }
 }

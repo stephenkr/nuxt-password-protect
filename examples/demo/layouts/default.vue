@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="parent">
     <nuxt />
   </div>
 </template>
@@ -15,6 +15,7 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
+  background-color: #f0f0f0;
 }
 
 *,
@@ -24,18 +25,37 @@ html {
   margin: 0;
 }
 
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
+h1 {
+  font-size: 1.4rem;
+  font-weight: normal;
 }
 
-.button--green:hover {
+h2 {
+  font-size: 1.2rem;
+  font-weight: normal;
+}
+
+h2 + p,
+h1 + p {
+  margin-top: 10px;
+}
+
+.button--pink {
+  background-color: #e91e63;
   color: #fff;
-  background-color: #3b8070;
+  border: 1px solid #e91e63;
+  border-radius: 3px;
+  padding: 10px;
+  height: 40px;
+  cursor: pointer;
+  font-size: 1rem;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.button--pink:hover {
+  color: #fff;
+  background-color: #a70a3e;
 }
 
 .button--grey {
@@ -51,5 +71,19 @@ html {
 .button--grey:hover {
   color: #fff;
   background-color: #35495e;
+}
+
+.parent {
+  display: flex;
+  height: 100vh;
+}
+
+.container {
+  max-width: 600px;
+  width: 100%;
+  background: #fff;
+  margin: auto;
+  padding: 25px;
+  border-radius: 5px;
 }
 </style>
