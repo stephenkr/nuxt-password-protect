@@ -4,7 +4,8 @@
   "version": "0.0.1",
   "license": "MIT",
   "scripts": {
-    "dev": "nuxt"
+    "dev": "nuxt",
+    "generate": "nuxt generate"
   },
   "dependencies": {
     "@nuxtjs/pwa": "^2.6.0",
