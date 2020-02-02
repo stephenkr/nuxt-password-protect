@@ -104,6 +104,12 @@ So to attempt to authorise you can do `https://mywebsite.com?_pw=password`
 
 The query string can be changed by the protect password options in your nuxt config file.
 
+# Demo website
+
+You can see an example of the module at this website, https://nuxt-password-protect.netlify.com/
+
+This code can be found in this repository at ./examples/demo.
+
 # License
 
 <a href="./LICENSE">MIT License</a>
