@@ -45,7 +45,7 @@ module.exports = {
   passwordProtect: {
     formPath: '/password',
     password: 'hello-world',
-    tokenSeed: 0101010,
+    tokenSeed: 101010,
     queryString: '_pw',
     cookieName: '_password',
     cookie: {
