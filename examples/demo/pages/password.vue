@@ -11,21 +11,24 @@
     <div v-else>
       <h1>Log in</h1>
       <p>Enter in your password, you can do so by filling in the form below.</p>
+      <p>The password is <strong>pass</strong></p>
 
       <div class="section">
-        <h2>Log in using a form</h2>
+        <h2>Log in using a form with the query string.</h2>
 
         <form method="GET" action="/">
-          <input value="pass" type="password" name="_pw" placeholder="Your password">
+          <input type="password" name="_pw" placeholder="Your password for the querystring login approach">
           <button class="button--pink" type="submit">
             Log in
           </button>
         </form>
       </div>
       <div class="section">
-        <h2>Log in using a Vue method</h2>
+        <h2>Log in using a Vue method with v-model.</h2>
 
         <p>Using this method will login the user in if the correct password is passed using the nuxt-password-protect authorise method.</p>
+
+        <input v-model="methodLoginValue" type="password" placeholder="Your password for the method login approach">
 
         <a class="button--pink" @click="loginUser()">Login using a method</a>
       </div>
@@ -37,6 +40,7 @@
 export default {
   data: function() {
     return {
+      methodLoginValue: '',
       isAuthorised: false
     }
   },
@@ -46,7 +50,7 @@ export default {
 
   methods: {
     loginUser() {
-      this.$passwordProtect.authorise('pass')
+      this.$passwordProtect.authorise(this.methodLoginValue)
       this.isAuthorised = this.$passwordProtect.isAuthorised()
       this.$router.push('/')
     },
