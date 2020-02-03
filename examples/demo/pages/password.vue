@@ -28,9 +28,11 @@
 
         <p>Using this method will login the user in if the correct password is passed using the nuxt-password-protect authorise method.</p>
 
-        <input v-model="methodLoginValue" type="password" placeholder="Your password for the method login approach">
+        <form>
+          <input v-model="methodLoginValue" type="password" placeholder="Your password for the method login approach">
 
-        <a class="button--pink" @click="loginUser()">Login using a method</a>
+          <a class="button--pink" @click="loginUser()">Login using a method</a>
+        </form>
       </div>
     </div>
   </div>
@@ -75,6 +77,11 @@ input {
   border-radius: 3px;
   height: 40px;
   vertical-align: top;
+  width: 300px;
+}
+
+form + p {
+  margin-top: 10px;
 }
 
 input + button {
