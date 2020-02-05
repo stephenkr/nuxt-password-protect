@@ -65,6 +65,10 @@ export default {
     password: 'pass',
     tokenSeed: 3343490,
     queryString: '_pw',
-    cookieName: '_password'
+    cookieName: '_password',
+    cookie: {
+      prefix: '',
+      expires: 2
+    }
   }
 }
