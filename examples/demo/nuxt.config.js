@@ -81,5 +81,10 @@ export default {
 
   router: {
     middleware: ['password-protect']
+  },
+
+  generate: {
+    // set error page for generated static website
+    fallback: '404.html'
   }
 }
