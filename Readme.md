@@ -35,6 +35,16 @@
 
 Your passwords can be stored as an environment variable or hardcoded in your source files.
 
+### Add module to nuxt.config.js
+
+To setup the `nuxt-password-protect`, ensure you add the module in your nuxt.config.js file.
+
+```
+module.exports = {
+  modules: ['nuxt-password-protect']
+}
+```
+
 #### Options
 
 Module initialisation in nuxt.config.js
