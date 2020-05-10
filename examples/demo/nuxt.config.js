@@ -34,10 +34,10 @@ export default {
   /*
   ** Nuxt.js modules
   */
-  modules: ['@nuxtjs/pwa', '../../lib/module'],
+  modules: ['@nuxtjs/pwa', 'nuxt-password-protect'],
 
   router: {
-    middleware: ['password-protect']
+    // middleware: ['password-protect'] // Enable to protect the entire website
   },
 
   /*

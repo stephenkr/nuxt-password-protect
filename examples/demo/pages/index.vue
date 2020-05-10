@@ -9,6 +9,7 @@
 
 <script>
 export default {
+  middleware: ['password-protect'],
   methods: {
     logout() {
       this.$passwordProtect.removeAuthorisation()
