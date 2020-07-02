@@ -5,7 +5,8 @@ const baseCtx = {
   redirect: jest.fn(),
   route: {
     query: {},
-    path: ''
+    path: '',
+    fullPath: ''
   },
   req: {
     headers: {
@@ -133,7 +134,9 @@ describe('PasswordProtect', () => {
       })
 
       passwordProtectInstance.checkUserIfRedirect()
-      expect(redirectMock).toBeCalledWith(options.formPath)
+      expect(redirectMock).toBeCalledWith(options.formPath, {
+        previousPath: ''
+      })
     })
 
     it('should not redirect the user if authorised', () => {
