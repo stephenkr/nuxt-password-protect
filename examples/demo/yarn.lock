@@ -5978,10 +5978,10 @@ num2fraction@^1.2.2:
   resolved "https://registry.yarnpkg.com/num2fraction/-/num2fraction-1.2.2.tgz#6f682b6a027a4e9ddfa4564cd2589d1d4e669ede"
   integrity sha1-b2gragJ6Tp3fpFZM0lidHU5mnt4=
 
-nuxt-password-protect@^1.0.4:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/nuxt-password-protect/-/nuxt-password-protect-1.0.4.tgz#77d68ba81ec3846ebc864710d5b3638cb2686b8b"
-  integrity sha512-ovq1py0AgTx3uHsSyP8jQubJtaw1/S1NspWDc5fq9TxMKWNbwSStWUQ6d6JgHWAivnH3HVk/5fJ0nDQBGyTRNg==
+nuxt-password-protect@*:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/nuxt-password-protect/-/nuxt-password-protect-1.0.6.tgz#1116228759d759b5c672eda139b059936e7135b7"
+  integrity sha512-LZrUBssGCF9iL+ADn1puknpPzJzSxCZU6Es+ZnWMA1uB7vbujXAIFmGijTKiIN09/PxKe+djxRHSydzyCPRh8w==
   dependencies:
     cookie "^0.4.0"
 
