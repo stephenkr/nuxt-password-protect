@@ -61,7 +61,8 @@ module.exports = {
     cookie: {
       prefix: '',
       expires: 5
-    }
+    },
+    ignoredPaths: ['/public-page']
   }
 }
 ```
@@ -87,6 +88,8 @@ module.exports = {
   }
 }
 ```
+
+To allow specific pages to be accessible without password protection, add the page's full path (`$route.fullPath`) to the `ignoredPaths` option.
 
 ### Using the API
 
