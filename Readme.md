@@ -53,6 +53,7 @@ module.exports = {
   modules: ['nuxt-password-protect'],
 
   passwordProtect: {
+    enabled: true,
     formPath: '/password',
     password: 'hello-world',
     tokenSeed: 101010,
@@ -68,6 +69,8 @@ module.exports = {
 ```
 
 With the options you can define the basics of your website protection.
+
+You can also enable or disable the protection using the option `enabled`, this could be a nice way to protect your website depending on the environment is has been deployed too.
 
 ### To protect a page, simply add the middleware
 
