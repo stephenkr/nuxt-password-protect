@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/stephenkr/nuxt-password-protect/compare/v1.1.0...v1.2.0) (2021-02-12)
+
+
+### Features
+
+* Support enabled option ([e6311ba](https://github.com/stephenkr/nuxt-password-protect/commit/e6311ba84c8ffa8926cd7143345fdbcb2f8c604e))
+
 ## [1.1.0](https://github.com/stephenkr/nuxt-password-protect/compare/v1.0.5...v1.1.0) (2020-11-03)
 
 
