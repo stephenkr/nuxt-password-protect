@@ -139,6 +139,28 @@ describe('PasswordProtect', () => {
       })
     })
 
+    it('should correctly not redirect the user if the option `enabled` is set to false', () => {
+      const getCookieMock = jest.fn(() => 'something else')
+      const redirectMock = jest.fn()
+
+      const passwordProtectInstance = getPasswordProtect({
+        ctx: {
+          ...baseCtx,
+          redirect: redirectMock
+        },
+        options: {
+          ...options,
+          enabled: false
+        },
+        storage: {
+          getCookie: getCookieMock
+        }
+      })
+
+      passwordProtectInstance.checkUserIfRedirect()
+      expect(redirectMock).not.toBeCalled()
+    })
+
     it('should not redirect the user if authorised', () => {
       const token = generateToken(options.password, options.tokenSeed)
       const getCookieMock = jest.fn(() => token)

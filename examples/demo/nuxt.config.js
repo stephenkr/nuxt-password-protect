@@ -61,6 +61,7 @@ export default {
   },
 
   passwordProtect: {
+    enabled: true,
     formPath: '/password',
     password: 'pass',
     tokenSeed: 3343490,
