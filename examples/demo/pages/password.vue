@@ -1,11 +1,20 @@
 <template>
   <div class="container">
+    <h2>{{ $t('welcome') }}</h2>
+
+    <nuxt-link :to="switchLocalePath('en')">
+      English
+    </nuxt-link>
+    <nuxt-link :to="switchLocalePath('fr')">
+      Français
+    </nuxt-link>
+
     <div v-if="isAuthorised">
       <h1>Looks like you're already logged in</h1>
 
       <p>Either logout or go to the password protected area</p>
 
-      <a class="button--pink" @click="removeAuthorisation">Log out</a>
+      <a @click="removeAuthorisation" class="button--pink">Log out</a>
       <a class="button--pink" href="/">Go to password protected area</a>
     </div>
     <div v-else>
@@ -31,7 +40,7 @@
         <form>
           <input v-model="methodLoginValue" type="password" placeholder="Your password for the method login approach">
 
-          <a class="button--pink" @click="loginUser()">Login using a method</a>
+          <a @click="loginUser()" class="button--pink">Login using a method</a>
         </form>
       </div>
     </div>
