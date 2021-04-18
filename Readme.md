@@ -122,9 +122,9 @@ The query string can be changed by the protect password options in your nuxt con
 
 ### Control the redirect
 
-If your website supports i18n routes, you can register callback to handle the redirect logic.
+If your website supports i18n routes, you can register a callback to handle the redirect logic.
 
-An example can be see in the plugins folder in the example.
+An example can be seen in the plugins folder in the example Nuxt app in this repository.
 
 To apply the callback, create a new Nuxt plugin with the following code:
 
@@ -144,9 +144,9 @@ export default function({ $passwordProtect, route, app, redirect }) {
 
 In the case above we are handling a redirect to a localised path to show the password form.
 
-> Please also ensure you handle the path if you have password protection enabled for your entired website.
+> Please also ensure you handle the path if you have password protection enabled for your entire website.
 
-The form path is used as a fallback if the plugin does not exist.
+The form path is used as a fallback if a callback is not registered.
 
 The redirect callback has access to the password protect options, incase you need it, and you should be able to access the context of the application like any normal Nuxt plugin.
 
