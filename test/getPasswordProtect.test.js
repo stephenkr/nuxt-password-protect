@@ -202,5 +202,27 @@ describe('PasswordProtect', () => {
       passwordProtectInstance.checkUserIfRedirect()
       expect(redirectMock).not.toBeCalledWith(options.formPath)
     })
+
+    it('should correctly be handled by the redirect callback if registered', () => {
+      const getCookieMock = jest.fn(() => 'something else')
+      const registerRedirectCallback = jest.fn()
+
+      const passwordProtectInstance = getPasswordProtect({
+        ctx: {
+          ...baseCtx
+        },
+        options,
+        storage: {
+          getCookie: getCookieMock
+        }
+      })
+
+      passwordProtectInstance.registerRedirectCallback(registerRedirectCallback)
+
+      passwordProtectInstance.checkUserIfRedirect()
+      expect(registerRedirectCallback).toBeCalledWith({
+        options
+      })
+    })
   })
 })

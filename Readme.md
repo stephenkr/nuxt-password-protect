@@ -120,6 +120,34 @@ So to attempt to authorise you can do `https://mywebsite.com?_pw=password`
 
 The query string can be changed by the protect password options in your nuxt config file.
 
+### Control the redirect
+
+If your website supports i18n routes, you can register callback to handle the redirect logic.
+
+An example can be see in the plugins folder in the example.
+
+To apply the callback, create a new Nuxt plugin with the following code:
+
+```js
+export default function({ $passwordProtect, route, app, redirect }) {
+  $passwordProtect.registerRedirectCallback(opts => {
+    const localePath = app.localePath('password')
+
+    if (route.path === localePath) {
+      return
+    }
+
+    redirect(localePath, { previousPath: route.fullPath })
+  })
+}
+```
+
+In the case above we are handling a redirect to a localised path to show the password form.
+
+> Please also ensure you handle the path if you have password protection enabled for your entired website.
+
+The form path is used as a fallback if the plugin does not exist
+
 # Demo website
 
 You can see an example of the module at this website, https://nuxt-password-protect.netlify.com/
