@@ -12,7 +12,8 @@
     "cookie": "^0.4.0",
     "cross-env": "^5.2.0",
     "nuxt": "^2.4.0",
-    "nuxt-password-protect": "*"
+    "nuxt-i18n": "^6.25.0",
+    "nuxt-password-protect": "../../"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^0.0.1",

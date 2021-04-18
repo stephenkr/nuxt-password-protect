@@ -29,15 +29,34 @@ export default {
   /*
   ** Plugins to load before mounting the App
   */
-  plugins: [],
+  plugins: ['~/plugins/setup-password-protect.js'],
 
   /*
   ** Nuxt.js modules
   */
-  modules: ['@nuxtjs/pwa', 'nuxt-password-protect'],
+  modules: ['@nuxtjs/pwa', 'nuxt-password-protect', 'nuxt-i18n'],
 
   router: {
     // middleware: ['password-protect'] // Enable to protect the entire website
+  },
+
+  i18n: {
+    locales: ['en', 'fr', 'es'],
+    defaultLocale: 'en',
+    vueI18n: {
+      fallbackLocale: 'en',
+      messages: {
+        en: {
+          welcome: 'Welcome'
+        },
+        fr: {
+          welcome: 'Bienvenue'
+        },
+        es: {
+          welcome: 'Bienvenido'
+        }
+      }
+    }
   },
 
   /*

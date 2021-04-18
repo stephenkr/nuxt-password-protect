@@ -1,11 +1,26 @@
 <template>
   <div class="container">
+    <div class="top-section">
+      <h2>{{ $t('welcome') }}</h2>
+
+      <div class="locale-switch">
+        <nuxt-link :to="switchLocalePath('en')">
+          English
+        </nuxt-link>
+        <nuxt-link :to="switchLocalePath('fr')">
+          Français
+        </nuxt-link>
+      </div>
+    </div>
+
+    <br>
+
     <div v-if="isAuthorised">
       <h1>Looks like you're already logged in</h1>
 
       <p>Either logout or go to the password protected area</p>
 
-      <a class="button--pink" @click="removeAuthorisation">Log out</a>
+      <a @click="removeAuthorisation" class="button--pink">Log out</a>
       <a class="button--pink" href="/">Go to password protected area</a>
     </div>
     <div v-else>
@@ -16,7 +31,7 @@
       <div class="section">
         <h2>Log in using a form with the query string.</h2>
 
-        <form method="GET" action="/">
+        <form :action="redirectPath" method="GET">
           <input type="password" name="_pw" placeholder="Your password for the querystring login approach">
           <button class="button--pink" type="submit">
             Log in
@@ -31,7 +46,7 @@
         <form>
           <input v-model="methodLoginValue" type="password" placeholder="Your password for the method login approach">
 
-          <a class="button--pink" @click="loginUser()">Login using a method</a>
+          <a @click="loginUser()" class="button--pink">Login using a method</a>
         </form>
       </div>
     </div>
@@ -46,6 +61,15 @@ export default {
       isAuthorised: false
     }
   },
+
+  computed: {
+    redirectPath() {
+      const path = this.$route.query.previousPath
+
+      return path || '/'
+    }
+  },
+
   mounted() {
     this.isAuthorised = this.$passwordProtect.isAuthorised()
   },
@@ -54,7 +78,9 @@ export default {
     loginUser() {
       this.$passwordProtect.authorise(this.methodLoginValue)
       this.isAuthorised = this.$passwordProtect.isAuthorised()
-      this.$router.push('/')
+
+      console.log('redirectPath', this.redirectPath)
+      this.$router.push(this.redirectPath)
     },
     removeAuthorisation() {
       this.$passwordProtect.removeAuthorisation()
@@ -65,6 +91,15 @@ export default {
 </script>
 
 <style scoped>
+.top-section {
+  display: flex;
+  justify-content: space-between;
+}
+
+.top-section .locale-switch a + a {
+  margin-left: 5px;
+}
+
 form {
   margin: 20px 0;
   font-family: sans-serif;
