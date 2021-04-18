@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0](https://github.com/stephenkr/nuxt-password-protect/compare/v1.2.0...v1.3.0) (2021-04-18)
+
+
+### Features
+
+* Support custom redirect logic ([f6893a4](https://github.com/stephenkr/nuxt-password-protect/commit/f6893a4d0b232b0ed0a082ebefd137007969b306))
+
 ## [1.2.0](https://github.com/stephenkr/nuxt-password-protect/compare/v1.1.0...v1.2.0) (2021-02-12)
 
 
