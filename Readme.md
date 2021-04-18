@@ -146,7 +146,9 @@ In the case above we are handling a redirect to a localised path to show the pas
 
 > Please also ensure you handle the path if you have password protection enabled for your entired website.
 
-The form path is used as a fallback if the plugin does not exist
+The form path is used as a fallback if the plugin does not exist.
+
+The redirect callback has access to the password protect options, incase you need it, and you should be able to access the context of the application like any normal Nuxt plugin.
 
 # Demo website
 
