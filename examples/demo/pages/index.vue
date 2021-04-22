@@ -3,7 +3,7 @@
     <h1>Welcome</h1>
     <p>This area is the password protected</p>
 
-    <a class="button--pink" @click="logout()">Log out</a>
+    <a @click="logout()" class="button--pink">Log out</a>
   </div>
 </template>
 
@@ -13,7 +13,10 @@ export default {
   methods: {
     logout() {
       this.$passwordProtect.removeAuthorisation()
-      this.$router.push('/password')
+
+      this.$nextTick(() => {
+        this.$router.push(this.localePath('password'))
+      })
     }
   }
 }

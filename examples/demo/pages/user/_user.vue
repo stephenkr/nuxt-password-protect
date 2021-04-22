@@ -18,7 +18,9 @@ export default {
   methods: {
     logout() {
       this.$passwordProtect.removeAuthorisation()
-      this.$router.push('/password')
+      this.$nextTick(() => {
+        this.$router.push(this.localePath('password'))
+      })
     }
   }
 }

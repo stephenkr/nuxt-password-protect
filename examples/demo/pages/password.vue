@@ -66,7 +66,7 @@ export default {
     redirectPath() {
       const path = this.$route.query.previousPath
 
-      return path || '/'
+      return path || this.localePath('/')
     }
   },
 
@@ -79,7 +79,6 @@ export default {
       this.$passwordProtect.authorise(this.methodLoginValue)
       this.isAuthorised = this.$passwordProtect.isAuthorised()
 
-      console.log('redirectPath', this.redirectPath)
       this.$router.push(this.redirectPath)
     },
     removeAuthorisation() {
