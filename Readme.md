@@ -20,6 +20,10 @@
   </a>
 </p>
 
+# No longer actively maintained.
+
+Please beaware that this module is no longer actively maintained. It will continue to be available, but not for new Nuxt features at this time.
+
 <p align="center">
   <a href="./CHANGELOG.md">Release notes</a>
 </p>
