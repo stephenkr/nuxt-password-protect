@@ -6,6 +6,6 @@ export default function({ $passwordProtect, route, app, redirect }) {
       return
     }
 
-    redirect(localePath, { previousPath: route.fullPath })
+    return redirect(localePath, { previousPath: route.fullPath })
   })
 }
